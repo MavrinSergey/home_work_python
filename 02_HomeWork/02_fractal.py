@@ -5,15 +5,11 @@ N = int((input('Программа показывает фракталы от 1 
 counter = 1
 frac = 1
 while counter <= N:
+    frac = frac * counter
     if counter == 1:
-        frac = frac * counter
-        counter += 1
         print(f"[ {frac}", end=", ")
     elif counter == N:
-        frac = frac * counter
-        counter += 1
         print(f"{frac}", end=" ]")
     else:
-        frac = frac * counter
-        counter += 1
         print(f"{frac}", end=", ")
+    counter += 1

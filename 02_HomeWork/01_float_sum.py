@@ -4,7 +4,7 @@
 input_data  = float(input('напишите дробное число и программа покажет сумму его цифр: '))
 sum = int()
 while input_data > 1:
-    input_data %= 10
+    input_data /= 10
 
 my_list = (str(input_data)).split(sep='.')
 
@@ -14,3 +14,4 @@ while result > 0:
     sum += result % 10
     result //= 10
 print(sum) 
+

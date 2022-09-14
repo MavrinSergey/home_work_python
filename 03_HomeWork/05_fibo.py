@@ -9,7 +9,7 @@
 
 def fibonachi_sequence(n, x): # ненашел как сделать чтобы при вводе числа отличного от 1 или -1 в аргумент функции она ругалась
     fib1 = 1
-    fib2 = 1 * x
+    fib2 = 1
     fibo_sequence = [fib1, fib2]
     for i in range(0, n-2):
         fib1, fib2 = fib2, fib1 + (fib2 * x)
