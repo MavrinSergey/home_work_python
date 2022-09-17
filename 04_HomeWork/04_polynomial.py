@@ -4,12 +4,11 @@
 # u00B2
 # a = '2\u00B2'
 # print(a)
-
+import random
 def creation_list(n):
-    import random
-    list_N = [0] * n
+    list_N = []
     for i in range(n):
-        list_N[i] = round(random.randint(0, 3), 2)
+        list_N.append(round(random.randint(0, 3), 2))
     return list_N
 
 def creation_list_member(k):
