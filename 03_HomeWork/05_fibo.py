@@ -8,10 +8,10 @@
 # или (-1) если нужно построить отрицательную последовательность
 
 def fibonachi_sequence(n, x): # ненашел как сделать чтобы при вводе числа отличного от 1 или -1 в аргумент функции она ругалась
-    fib1 = 1
+    fib1 = 0
     fib2 = 1
     fibo_sequence = [fib1, fib2]
-    for i in range(0, n-2):
+    for i in range(n-1):
         fib1, fib2 = fib2, fib1 + (fib2 * x)
         fibo_sequence.append(fib2)
     if x == -1:
@@ -19,9 +19,8 @@ def fibonachi_sequence(n, x): # ненашел как сделать чтобы 
     return fibo_sequence
 
 n = int(input('Введите число: '))
-connector = [0]
 list_neg = fibonachi_sequence(n, -1)
+list_neg.remove(0)
 list_pos = fibonachi_sequence(n, 1)
-res = list_neg + connector + list_pos
+res = list_neg + list_pos
 print(res)
-# ненашел как сделать чтобы при вводе числа отличного от 1 или -1 в аргумент функции она ругалась

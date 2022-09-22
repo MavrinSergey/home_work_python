@@ -17,4 +17,3 @@ list_my = [list_N[multiplication_list[x]] for x in range(len(multiplication_list
 
 mult = reduce(lambda x, y: x * y, list_my, 1)
 print(mult)
-

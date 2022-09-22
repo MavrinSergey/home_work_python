@@ -42,7 +42,9 @@ while sum:
     for i in range(3):
         for j in range(3):
             sum += pole[i][j].count('x')
-
+    print(pole[0])
+    print(pole[1])
+    print(pole[2])
     if condition_of_victory(counter, pole):
         print(f'{user1 if counter else user2} вы выйграли')
         print(pole[0])

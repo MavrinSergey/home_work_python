@@ -18,7 +18,12 @@ if type_game == 'n':
     while sweets > 0:
         counter = not counter
         amount_sweets = sweets > 28
-        candy = int(input(f'{user1 if counter else user2} ваш ход. На столе осталось {sweets} конфет. Введите кол-в конфет которое вы забераете: '))
+        while True:
+            try:
+                candy = int(input(f'{user1 if counter else user2} ваш ход. На столе осталось {sweets} конфет. Введите кол-в конфет которое вы забераете: '))
+                break
+            except Exception as errorik:
+                print(errorik)
         while candy > (28 if amount_sweets else sweets) or candy <= 0:
             print(f'Введено неверное кол-во конфет введите заново(от 1 до {28 if amount_sweets else sweets})')
             candy = int(input(f'{user1 if counter else user2} ваш ход. На столе осталось {sweets} конфет. Введите кол-в конфет которое вы забераете: '))
@@ -30,7 +35,7 @@ else:
     counter = random.randint(0, 1)
     while sweets > 0:
         candy = 1
-        counter = not counter # наверное это лишняя строка
+        counter = not counter
         amount_sweets = sweets > 28
         if counter == True:
             candy = int(input(f'{user} ваш ход. На столе осталось {sweets} конфет. Введите кол-во конфет которое вы забераете: '))
