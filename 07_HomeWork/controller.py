@@ -1,6 +1,6 @@
 import gui
 from process import creat_contact, delete_contact, search_next_Id, contact_editing, search_surname
-from bd import data_entry_to_file, print_contact, read_data, data_rewrite_to_file
+from bd import data_entry_to_file, print_contact, read_data, data_rewrite_to_file, creat_file
 
 
 while True:
@@ -8,8 +8,9 @@ while True:
         'Что будем делать?(1 - добавление контакта, 2 - удаление контакта, 3 - редактирование контакта, 4 - поиск контакта, 5 - выйти из приложения: '))
     print(action)
     if action == 1:
-        row = creat_contact()
+        creat_file()
         data = read_data()
+        row = creat_contact()
         row.insert(0, search_next_Id(data))
         print(row)
         data_entry_to_file(row)
@@ -21,7 +22,6 @@ while True:
         data = delete_contact(data, del_id)
         data_rewrite_to_file(data)
     elif action == 3:
-        print("Вот список контактов")
         print_contact()
         edit_id = gui.input_user('Введите id контакта который хотите изменить: ')
         data = read_data()

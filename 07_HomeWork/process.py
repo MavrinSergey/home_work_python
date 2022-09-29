@@ -20,6 +20,7 @@ def delete_contact(data, x):
 
 def search_next_Id(data):
     try:
+        print(data)
         num = data[-1][0].split(';')
         next_id = int(num[0]) + 1
         return next_id
